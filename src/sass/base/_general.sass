@@ -1,0 +1,631 @@
+*
+	padding: 0
+	margin: 0
+	border: 0
+
+*,
+*:before,
+*:after
+	box-sizing: border-box
+
+a
+	color: inherit
+
+a,
+button
+	outline: none
+	&:focus-visible
+		outline: 3px solid $black-color
+		outline-offset: 2px
+
+aside,
+nav,
+footer,
+header,
+section
+	display: block
+
+html,
+body
+	height: 100%
+	min-width: $min-width
+
+body
+	line-height: 1
+	font-family: $font-family
+	color: $light-color
+	font-weight: 400
+
+input,
+button,
+textarea
+	font-size: inherit
+	font-family: $font-family
+
+button
+	cursor: pointer
+	background-color: transparent
+
+a,
+a:visited
+	text-decoration: none
+
+a:hover
+	text-decoration: none
+
+ul li
+	list-style: none
+
+img
+	height: auto
+	max-width: 100%
+	object-fit: cover
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	font-weight: inherit
+	font-size: inherit
+
+//-------------------Wrapper-----------------
+.wrapper
+	width: 100%
+	min-height: 100%
+	overflow: hidden
+	display: flex
+	flex-direction: column
+
+//-----------Container------------------------
+.container
+	max-width: $max-width-container
+	padding: 0 15px
+	margin: 0 auto
+	@media (max-width: $md3)
+		padding: 0 10px
+
+//--------------Main------------------------
+.main
+	flex: 1 1 auto
+	padding-top: 164px
+	@media (max-width: $md2)
+		padding-top: 156px
+	@media (max-width: $md3)
+		padding-top: 130px
+
+	&__about
+		padding: 30px 0 35px 0
+		@media (max-width: 600px)
+			padding: 20px 0
+
+//--------------Preloader-----------------------
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: $light-color
+	z-index: 200
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: all 0.3s ease 0s
+	opacity: 1
+	visibility: visible
+	&.done
+		opacity: 0
+		visibility: hidden
+
+//----------------Button----------------
+.btn
+	cursor: pointer
+	display: inline-flex
+	padding: 0 25px
+	justify-content: center
+	align-items: center
+	height: 39px
+	color: $light-color
+	background-color: $minor-color
+	font-size: 12px
+	text-transform: uppercase
+	font-weight: 900
+	transition: all 0.3s ease 0s
+	@media (any-hover: hover)
+		&:hover
+			background-color: $dark-minor-color
+
+//-----------------Side---------------------------
+.side-text
+	font-size: 12px
+	line-height: 150%
+	font-weight: 300
+	color: $grey-color
+	transition: color 0.3s ease 0s
+
+.side-label
+	font-size: 12px
+	line-height: 150%
+	font-weight: 900
+	text-transform: uppercase
+	color: $black-color
+	transition: color 0.3s ease 0s
+
+//-------------Item Product--------------------------
+.item-product
+	padding: 15px 25px
+	position: relative
+	display: flex
+	flex-direction: column
+	transition: all 0.3s ease 0s
+	border: 5px solid $pale-grey
+	&_hover
+		overflow: hidden
+		border: 2px solid $pale-grey
+		@media (any-hover: hover)
+			&:hover
+				.item-product__hover
+					opacity: 1
+					visibility: visible
+					transform: translateX(0)
+				.item-product__name,
+				.item-product__footer,
+				.item-product__btns
+					opacity: 0
+					visibility: hidden
+
+	&__label
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 10px
+		font-size: 12px
+		font-weight: 900
+		padding: 0 15px
+		height: 21px
+		text-transform: uppercase
+		background-color: $minor-color
+		color: $light-color
+		border-radius: 20px
+
+	&__image
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 0 auto
+		padding: 10px 0
+		margin-bottom: 10px
+		transition: all 0.3s ease 0s
+		width: 160px
+		height: 175px
+
+	&__name
+		transition: all 0.3s ease 0s
+		color: $main-color
+		margin-bottom: 16px
+		flex: 1 1 auto
+		opacity: 1
+		visibility: visible
+		@media (any-hover: hover)
+			&:hover
+				color: $hover-color
+
+	&__title
+		display: inline-block
+		font-weight: 900
+		font-size: 16px
+		line-height: 120%
+
+	&__subtitle
+		font-weight: 300
+
+	&__footer,
+	&__btns
+		opacity: 1
+		visibility: visible
+		transition: all 0.3s ease 0s
+		display: flex
+		align-items: center
+
+	&__footer
+		justify-content: space-between
+		flex-wrap: wrap
+
+	&__btns
+		margin-bottom: 30px
+		justify-content: space-evenly
+
+	&__btn
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		width: 39px
+		height: 39px
+		border-radius: 50%
+		background-color: $main-color
+		transition: all 0.3s ease 0s
+		&::before
+			font-size: 15px
+			font-weight: 700
+			color: $light-color
+		@media (any-hover: hover)
+			&:hover
+				transform: scale(1.1)
+
+	&__price
+		color: #333
+
+	&__hover
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		transform: translateX(-110%)
+		opacity: 0
+		visibility: hidden
+		transition: all 0.5s ease 0s
+
+.hover-item
+	height: 100%
+	background-color: rgba(0,0,0,0.84)
+	border: 5px solid $minor-color
+	padding: 20px
+	display: flex
+	flex-direction: column
+	@media (max-width: $md1)
+		padding: 12px
+
+	&__title
+		display: block
+		font-size: 16px
+		line-height: 130%
+		font-weight: 300
+		color: $light-grey
+		margin-bottom: 25px
+		span
+			font-weight: 900
+			color: $light-color
+			display: block
+		@media (max-width: $md1)
+			font-size: 15px
+			margin-bottom: 15px
+
+	&__descr
+		font-size: 14px
+		line-height: 130%
+		font-weight: 400
+		color: $light-color
+		margin-bottom: 20px
+		span
+			display: block
+			font-weight: 900
+			color: $minor-color
+			&:not(:last-child)
+				margin-bottom: 5px
+
+		@media (max-width: $md1)
+			margin-bottom: 30px
+
+	&__btns
+		flex: 1 1 auto
+		display: flex
+		justify-content: space-evenly
+		margin-bottom: 20px
+
+	&__btn
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 52px
+		width: 52px
+		background-color: $minor-color
+		border-radius: 50%
+		color: $light-color
+		font-size: 20px
+		transition: all 0.3s ease 0s
+		@media (any-hover: hover)
+			&:hover
+				transform: scale(1.1)
+
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__label
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		background-color: $light-color
+		color: $minor-color
+		border: 1px solid $minor-color
+		border-radius: 10px
+		font-size: 16px
+		line-height: 180%
+		font-weight: 300
+		padding: 0 12px
+
+	&__price
+		color: $light-color
+		@media (max-width: $md1)
+			font-size: 22px
+
+//------------------Product Price---------------------------------------
+.product-old-price
+	color: $grey-color
+	font-size: 18px
+	font-weight: 300
+	text-decoration: line-through
+
+.product-price
+	font-size: 24px
+	font-weight: 900
+
+//----------Title-----------------------
+.title
+	font-family: 'UniSans-Trial'
+	font-size: 30px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 0.025em
+	display: inline-block
+
+//------------Select--------------------	
+.choices
+	border: 1px solid $light-grey
+	transition: border-color 0.3s ease
+	&.is-focused
+		border-color: $black-color
+		.choices__list--dropdown
+			border-color: $black-color
+
+.choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable
+	padding-right: 0
+
+.choices[data-type*=select-one].is-open::after
+	margin-top: 0
+	transform: rotate(-180deg)
+
+.choices[data-type*=select-one]::after
+	border: none
+	top: 40%
+	background: url('../resources/icons/icons/caret-down-solid.svg') center/cover no-repeat
+	height: 10px
+	width: 12px
+	fill: $grey-color
+	transition: transform 0.3s ease, margin-top 0.3s ease
+
+.choices__inner
+	margin: 0
+	padding: 0
+	padding-bottom: 0
+	align-items: flex-end
+	min-height: 30px
+	background-color: $light-color
+
+.choices__list--single
+	padding: 7px 7px 0 7px
+
+.choices__item
+	padding-right: 0
+	width: 100%
+	color: $main-color
+	font-size: 14px
+	font-weight: 600
+	transition: background-color 0.3s ease
+	&.is-highlighted
+		background-color: $light-grey
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted::after
+	display: none
+
+//----------------------Tabs---------------------
+.show
+	display: block
+
+.hide
+	display: none
+
+.fade
+	animation-name: fade
+	animation-duration: 1.5s
+
+@keyframes fade
+	from
+		opacity: 0.1
+	to
+		opacity: 1
+
+.tab
+	cursor: pointer
+	display: inline-flex
+	padding: 0 15px
+	height: 32px
+	justify-content: center
+	align-items: center
+	text-transform: uppercase
+	font-weight: 900
+	font-size: 14px
+	background-color: $light-color
+	color: $main-color
+	border-radius: 20px
+	border: 1px solid $main-color
+	&.active
+		background-color: $main-color
+		color: $light-color
+		border: 1px solid $main-color
+
+.flyImage
+	opacity: 1
+	z-index: 100
+	position: fixed
+	transition: all 1.5s ease 0s
+
+.add-btn
+	&.hold
+		opacity: 0.2
+		cursor: default
+
+//-------------------Quantity-----------------------------
+
+.quantity
+	display: flex
+	align-items: center
+
+	&__btn
+		color: $light-grey
+		font-size: 22px
+		transition: all 0.3s ease 0s
+		@media (any-hover: hover)
+			&:hover
+				color: $main-color
+		@media (max-width: $md2)
+			color: $main-color
+		&.disabled
+			pointer-events: none
+			color: $light-grey
+
+	&__current-number
+		flex: 0 0 56px
+		height: 33px
+		border: 2px solid $light-grey
+		margin: 0 10px
+
+	&__input
+		width: 100%
+		height: 100%
+		outline: none
+		padding: 0 5px
+		text-align: center
+		font-size: 16px
+		font-weight: 900
+		color: $grey-color
+		// &:focus
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button
+		-webkit-appearance: none
+		margin: 0
+
+//------------------------Checkbox-------------------
+.checkbox
+	appearance: none
+	&:checked + .checkbox-tag::after
+		transform: scale(1)
+	&:focus + .checkbox-tag
+		outline: 2px solid $black-color
+		outline-offset: 3px
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button
+		-webkit-appearance: none
+		margin: 0
+
+.checkbox-tag
+	position: relative
+	display: inline-block
+	&::before
+		content: ''
+		position: absolute
+		top: -2px
+		left: 0
+		width: 15px
+		height: 15px
+		border: 2px solid $main-color
+	&::after
+		transition: all 0.3 ease 0s
+		position: absolute
+		content: ''
+		top: 1px
+		left: 3px
+		width: 9px
+		height: 9px
+		background-color: $main-color
+		transform: scale(0)
+
+//---------------------Breadcrumbs---------------------
+
+.breadcrumbs
+
+	&__list
+		display: flex
+		align-items: center
+
+	&__item
+		display: flex
+		align-items: center
+		margin-right: 10px
+		font-size: 14px
+		font-weight: 300
+		color: $light-grey
+		&:last-child
+			margin-right: 0
+
+	&__link
+		display: block
+		color: $main-color
+		transition: all 0.3s ease 0s
+		margin-right: 10px
+		@media (any-hover: hover)
+			&:hover
+				color: $hover-color
+
+	&__icon
+		color: $main-color
+		font-size: 12px
+
+//Search Result
+.search-result
+
+	&__title
+		color: $light-grey
+		margin-bottom: 15px
+
+	&__list
+		color: $main-color
+		padding: 0 25px
+		margin-bottom: 25px
+
+	&__item
+		&:not(&:last-child)
+			margin-bottom: 10px
+
+	&__link
+		color: $main-color
+		font-size: 18px
+		font-weight: 700
+		transition: color 0.3s ease 0s
+		@media (any-hover: hover)
+			&:hover
+				color: $hover-color
+		@media (max-width: $md4)
+			font-size: 14px
+
+	&__false
+		padding: 0 5px
+		color: $main-color
+		font-size: 18px
+		font-weight: 700
+		margin-bottom: 25px
+
+//Validate Elements Style
+.js-validate-error-field
+	border: none
+	box-shadow: 0 0 8px 1px #ee2c2d
+
+.js-validate-error-label
+	padding-top: 4px
+
+//Policy
+.policy
+	padding: 10px
+	background-color: $main-color
+	color: $light-color
+	font-size: 18px
+	font-weight: 600
+	p
+		line-height: 120%
+		margin-bottom: 10px

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Каталог</title> 
+    @@include("html/head-links.html")
+</head>
+<body>
+    <div class="wrapper">
+        @@include("html/header.html")
+        <main class="main">
+            <section class="main__central central">
+                <div class="central__container container">
+                    <aside class="central__side">
+                        @@include("html/side-menu.html")                        
+                        @@include("html/filter.html")                        
+                    </aside>
+                    <div class="central__content">
+                        @@include("html/search.html") 
+                        @@include("html/search-result.html")
+                        <nav class="central__breadcrumbs breadcrumbs">
+                            <ul class="breadcrumbs__list">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                                    <div class="breadcrumbs__icon icon-angles-right-solid"></div>
+                                </li>
+                                <li class="breadcrumbs__item">Каталог товара</li>
+                            </ul>                        
+                        </nav>       
+                        @@include("html/catalog-items.html")                  
+                    </div>
+                </div>                
+            </section>            
+            @@include("html/menu-block.html")
+        </main>        
+        @@include("html/footer.html")
+    </div>
+    @@include("html/preloader.html")
+    @@include("html/marketing.html")
+    @@include("html/modal.html")
+        
+    <script src="js/vendors/swiper-bundle.min.js"></script>    
+    <script src="js/vendors/wNumb.min.js"></script>
+    <script src="js/vendors/nouislider.min.js"></script>
+    <script src="js/vendors/simplebar.min.js"></script>
+    <script src="js/vendors/inputmask.min.js"></script>
+    <script src="js/vendors/just-validate.min.js"></script>
+    <script src="js/vendors/choices.min.js"></script>
+    <script src="js/vendors/inert.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

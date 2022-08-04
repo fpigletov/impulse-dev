@@ -1,0 +1,32 @@
+<div class="central__catalog-items catalog-items">
+    <h2 class="catalog-items__title title">Каталог товаров</h2>
+    <div class="catalog-items__actions actions-catalog">
+        <div class="actions-catalog__sort">
+            <div class="actions-catalog__label catalog-label">Сортировать по:</div>
+            <select name="Sort" class="actions-catalog__select">                    
+                <option class="actions-catalog__option" value="По_умолчанию">По умолчанию</option>
+                <option class="actions-catalog__option" value="По_цене">По цене</option>
+                <option class="actions-catalog__option" value="По_названию">По названию</option>
+            </select>                               
+        </div>                                  
+    </div>
+    <div class="catalog-items__choice choice-catalog">
+        <div class="choice-catalog__wrapper">                                
+            <button type="button" class="choice-catalog__clear">Clear All</button>
+        </div>                            
+    </div>
+    <div class="catalog-items__navi navi-catalog">
+        <div class="navi-catalog__sort">
+            <div class="navi-catalog__label catalog-label">На странице:</div>
+            <select name="Items on page" class="navi-catalog__select">                    
+                <option class="navi-catalog__option" value="9">9</option>
+                <option class="navi-catalog__option" value="12">12</option>
+                <option class="navi-catalog__option" value="15">15</option>
+            </select>
+        </div>        
+    </div>
+    <ul class="catalog-items__products product-items"></ul> 
+    <div class="catalog-items__more">
+        <button type="button" class="catalog-items__btn btn">Загрузить еще</button> 
+    </div>
+</div>

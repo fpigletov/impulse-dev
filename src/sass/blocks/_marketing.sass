@@ -1,0 +1,76 @@
+.marketing
+    position: fixed
+    bottom: 30px
+    left: 50px
+    z-index: 5
+    background-color: rgba(0, 0, 0, 0.84)
+    display: inline-flex
+    padding: 12px
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2)
+    transition: all 0.5s ease 0s
+    transform: translateX(-150vw)
+    border-radius: 10px
+    &.active
+        transform: translateX(0)
+        transition: all 0.5s ease 0s
+    @media (max-width: $md2)
+        bottom: 20px
+        left: 20px
+    @media (max-width: $md3)
+        display: none
+
+    &__image
+        border-radius: 5px
+        width: 100px
+        height: 100px
+        margin-right: 7px
+        background-color: $light-color
+        img
+            padding: 5px
+
+    &__top
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 10px
+
+    &__customer-name
+        color: $light-color
+        font-size: 12px
+        font-weight: 500
+
+    &__close
+        cursor: pointer
+        color: $light-color
+        font-size: 16px
+        background-color: transparent
+        transition: color 0.3s ease 0s
+        @media (any-hover: hover)
+            &:hover
+                color: $minor-color
+
+    &__name
+        margin-bottom: 15px
+
+    &__title,
+    &__subtitle
+        color: $minor-color
+
+    &__title
+        font-size: 14px
+        font-weight: 900
+        transition: color 0.3s ease 0s
+        @media (any-hover: hover)
+            &:hover
+                color: $dark-minor-color
+
+    &__subtitle
+        font-size: 12px
+        font-weight: 300
+
+    &__when,
+    &__where
+        color: $light-color
+        font-size: 12px
+        line-height: 110%
+        font-weight: 500

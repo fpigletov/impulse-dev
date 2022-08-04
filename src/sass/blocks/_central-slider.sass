@@ -1,0 +1,213 @@
+.central-slider
+
+    &__slide
+        position: relative
+        padding: 20px 35px 60px 35px
+        @media (max-width: $md3)
+            padding: 20px 20px 50px 20px
+        @media (max-width: $md4)
+            padding: 20px 10px 50px 10px
+    &__slide[data-slide="1"]
+        .central-slider__title, p
+            color: $pale-grey
+    &__slide[data-slide="2"]
+        .central-slider__title span,
+        p,
+        .slider-timer__title
+            color: $pale-grey
+        .central-slider__descr
+            margin-bottom: 159px
+            @media (max-width: $md4)
+                margin-bottom: 145px
+    &__image
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+
+    &__content
+        position: relative
+        z-index: 2
+
+    &__title
+        font-size: 48px
+        font-weight: 900
+        text-transform: uppercase
+        color: $black-color
+        margin-bottom: 15px
+        span
+            display: block
+            line-height: 80%
+            color: $minor-color
+        @media (max-width: $md3)
+            font-size: 42px
+            margin-bottom: 45px
+        @media (max-width: $md4)
+            font-size: 32px
+
+    &__descr
+        font-size: 14px
+        color: $black-color
+        font-weight: 900
+        line-height: 133.333%
+        margin-bottom: 15px
+
+    &__text-1
+        font-size: 18px
+        line-height: 24px
+        text-transform: uppercase
+        color: $minor-color
+
+    &__text-2
+        display: inline-block
+        color: $light-color
+        background-color: $grey-color
+        padding: 2px 7px
+
+    &__text-3
+        color: $grey-color
+
+    &__timer
+        padding: 10px 0
+        margin-bottom: 30px
+
+    &__footer
+        text-align: center
+
+    &__price
+        display: flex
+        flex-direction: row-reverse
+        justify-content: center
+        align-items: flex-end
+        font-size: 36px
+        font-weight: 900
+        margin-bottom: 25px
+        &::before
+            font-size: 26px
+            padding-left: 5px
+        @media (max-width: $md4)
+            font-size: 32px
+            &::before
+                font-size: 24px
+
+    &__button
+        display: inline-flex
+        flex-direction: row-reverse
+        justify-content: center
+        align-items: center
+        height: 30px
+        padding: 0 10px 0 20px
+        border: 2px solid $light-color
+        border-radius: 20px
+        color: $light-color
+        font-size: 14px
+        font-weight: 900
+        text-transform: uppercase
+        transition: all 0.3s ease 0s
+        &::before
+            font-size: 10px
+            margin-left: 10px
+        @media (any-hover: hover)
+            &:hover
+                background-color: $light-color
+                color: $black-color
+
+    &__dotts
+        position: relative
+        z-index: 1
+        display: flex
+        justify-content: center
+        margin-top: -18px
+        counter-reset: number 0
+
+        .swiper-pagination-bullet
+            opacity: 1
+            cursor: pointer
+            width: 55px
+            height: 55px
+            border-radius: 50%
+            border: 2px solid $light-color
+            position: relative
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: center
+            counter-increment: number
+            &::after
+                content: counter(number)
+                opacity: 0
+                transition: all 0.3s ease 0s
+                color: $light-color
+                font-size: 16px
+                font-weight: 900
+                position: absolute
+                width: 100%
+                height: 100%
+                border-radius: 50%
+                top: 0
+                left: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: $minor-color
+
+        .swiper-pagination-bullet-active
+            &::after
+                opacity: 1
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+    margin: 0 22.5px
+    @media (max-width: $md4)
+        margin: 0 10px
+
+.swiper-pagination-current
+    font-family: Roboto
+    font-size: 30px
+    font-weight: 900
+    text-transform: uppercase
+    letter-spacing: 0.025em
+    color: $black-color
+
+.swiper-pagination-fraction
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 500
+    color: $light-grey
+
+.slider-timer
+
+    &__title
+        color: $black-color
+        font-size: 24px
+        margin-bottom: 10px
+        font-weight: 700
+        @media (max-width: $md4)
+            font-size: 18px
+
+    &__body
+        display: flex
+        align-items: center
+
+    &__block
+        padding: 10px
+        border-radius: 5px
+        background-color: $pale-grey
+        color: $black-color
+        font-size: 20px
+        font-weight: 900
+        text-align: center
+        &:not(:last-child)
+            margin-right: 10px
+        span
+            display: block
+            color: $minor-color
+        @media (max-width: $md4)
+            font-size: 16px
+            &:not(:last-child)
+                margin-right: 5px

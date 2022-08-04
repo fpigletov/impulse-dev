@@ -1,0 +1,182 @@
+<div class="modal">
+    <div class="modal__body">
+        <button type="button" class="modal__close icon-xmark-solid" aria-label="Закрыть окно"></button>
+        <div class="modal__content">   
+            <form action="#" method="POST" class="modal__form modal__form_callback form-modal">
+                <h3 class="form-modal__title">Заказать обратный звонок</h3> 
+                <div class="form-modal__content">
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Имя<span>*</span></span>
+                        <input class="form-modal__input" name="Name" type="text" data-validate-field="name">
+                    </label>
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Моб. телефон<span>*</span></span>
+                        <input class="form-modal__input" name="Phone" type="tel" data-validate-field="phone">
+                    </label>
+                </div> 
+                <button type="submit" class="form-modal__btn btn">ЗАКАЗАТЬ</button>
+            </form>              
+            <form action="#" method="POST" enctype="multipart/form-data" class="modal__form modal__form_registration form-modal">
+                <h3 class="form-modal__title">РЕГИСТРАЦИЯ</h3> 
+                <div class="form-modal__content">
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Логин<span>*</span></span>
+                        <input class="form-modal__input" name="Login" type="text" data-validate-field="login">
+                    </label>
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Пароль<span>*</span></span>
+                        <input class="form-modal__input" name="Password" type="password" data-validate-field="password">
+                    </label>
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">E-mail<span>*</span></span>
+                        <input class="form-modal__input" name="Email" type="email" data-validate-field="email">
+                    </label>
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Моб. телефон<span>*</span></span>
+                        <input class="form-modal__input" name="Phone" type="tel" data-validate-field="phone">
+                    </label>                        
+                    <label class="form-modal__item">
+                        <input checked name="Agree[]" type="checkbox" class="form-modal__checkbox checkbox" value="Политикой_обработки_данных" data-validate-field="agree">
+                        <span class="form-modal__tag checkbox-tag">Соглашаюсь с <a target="_blank" href="policy.html">Политикой обработки персональных данных</a></span>
+                    </label>
+                </div> 
+                <button type="submit" class="form-modal__btn btn">РЕГИСТРАЦИЯ</button>
+            </form>                
+            <form action="#" method="POST" enctype="multipart/form-data" class="modal__form modal__form_login form-modal">
+                <h3 class="form-modal__title">АВТОРИЗАЦИЯ</h3> 
+                <div class="form-modal__content">
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Логин<span>*</span></span>
+                        <input class="form-modal__input" name="Login" type="text" data-validate-field="login">
+                    </label>
+                    <label class="form-modal__item">
+                        <span class="form-modal__name">Пароль<span>*</span></span>
+                        <input class="form-modal__input" name="Password" type="password" data-validate-field="password">
+                    </label>                        
+                    <label class="form-modal__item">
+                        <input name="Password-checkbox[]" type="checkbox" class="form-modal__checkbox checkbox" value="Сохранить_пароль">
+                        <span class="form-modal__tag checkbox-tag">Сохранить пароль</span>
+                    </label>
+                </div> 
+                <button type="submit" class="form-modal__btn btn">ВОЙТИ</button>
+            </form> 
+            <div class="modal__message"></div>       
+            <div class="modal__product product">                
+                <div class="product__wrapper">
+                    <div class="product__name"></div>        
+                    <div class="product__content">
+                        <div class="product__body">
+                            <div class="product__slider slider-product">
+                                <div class="slider-product__mainslider swiper">
+                                    <div class="slider-product__wrapper swiper-wrapper">
+                                        <div class="slider-product__slide swiper-slide">
+                                            <div data-slide-zoom="0" class="slider-product__zoom swiper-zoom-container" data-swiper-zoom="3">
+                                            </div>                                                
+                                            <div class="slider-product__labels">
+                                                <div class="slider-product__label">-15%</div>                                                    
+                                            </div>
+                                        </div>
+                                        <div class="slider-product__slide swiper-slide">
+                                            <div data-slide-zoom="1" class="slider-product__zoom swiper-zoom-container" data-swiper-zoom="3">
+                                            </div>                                                
+                                            <div class="slider-product__labels"></div>
+                                        </div>
+                                        <div class="slider-product__slide swiper-slide">
+                                            <div data-slide-zoom="2" class="slider-product__zoom swiper-zoom-container" data-swiper-zoom="3">
+                                            </div>                                                
+                                            <div class="slider-product__labels"></div>
+                                        </div>
+                                        <div class="slider-product__slide swiper-slide">
+                                            <div data-slide-zoom="3" class="slider-product__zoom swiper-zoom-container" data-swiper-zoom="3">
+                                            </div>                                                
+                                            <div class="slider-product__labels"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-product__subslider swiper">
+                                    <div class="slider-product__subwrapper swiper-wrapper">
+                                        <div class="slider-product__subslide swiper-slide">
+                                            <div class="slider-product__labels"></div>
+                                        </div>
+                                        <div class="slider-product__subslide swiper-slide">
+                                            <div class="slider-product__labels"></div>
+                                        </div>
+                                        <div class="slider-product__subslide swiper-slide">
+                                            <div class="slider-product__labels"></div>
+                                        </div>                                            
+                                        <div class="slider-product__subslide swiper-slide">
+                                            <div class="slider-product__labels"></div>
+                                        </div>                                            
+                                    </div>                                            
+                                </div>
+                            </div>
+                            <div class="product__info info-product">
+                                <div class="info-product__top">                         
+                                    <div class="info-product__label">в наличии</div>                                      
+                                </div>
+                                <div class="info-product__actions">
+                                    <div class="info-product__prices">                                
+                                    </div>
+                                    <div class="info-product__quantity quantity">
+                                        <button class="quantity__btn quantity__btn_minus icon-circle-left-solid" aria-label="Удалить товар"></button>
+                                        <div class="quantity__current-number">
+                                            <input autocomplete="off" name="current-number" placeholder="1" type="number" class="quantity__input" value="1" max="99">
+                                        </div>                                            
+                                        <button class="quantity__btn quantity__btn_plus icon-circle-right-solid" aria-label="Добавить товар"></button>
+                                    </div>
+                                    <div class="info-product__add"></div>
+                                </div>
+                                <div class="info-product__include include-info">
+                                    <div class="include-info__label">В стоимость товара включено:</div>
+                                    <div class="include-info__body">
+                                        <div class="include-info__item">
+                                            <div class="include-info__icon">
+                                                <picture>
+                                                    <source srcset="img/product/01.webp" type="image/webp">
+                                                    <img loading="lazy" src="img/product/01.png" alt="Бесплатная сборка">
+                                                </picture>                                 
+                                            </div>
+                                            <div class="include-info__text">Бесплатная сборка</div>
+                                        </div>                                            
+                                        <div class="include-info__item">
+                                            <div class="include-info__icon">
+                                                <picture>
+                                                    <source srcset="img/product/02.webp" type="image/webp">
+                                                    <img loading="lazy" src="img/product/02.png" alt="Бесплатная доставка">
+                                                </picture> 
+                                            </div>
+                                            <div class="include-info__text">Бесплатная доставка</div>
+                                        </div>  
+                                        <div class="include-info__item">
+                                            <div class="include-info__icon">
+                                                <picture>
+                                                    <source srcset="img/product/03.webp" type="image/webp">
+                                                    <img loading="lazy" src="img/product/03.png" alt="Гарантия">
+                                                </picture> 
+                                            </div>
+                                            <div class="include-info__text">Гарантия</div>
+                                        </div>                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__descr descr-product">
+                            <ul class="descr-product__tabs">
+                                <li class="descr-product__tab">
+                                    <button type="button" class="descr-product__tab-btn tab">Описание</button>
+                                </li>
+                                <li class="descr-product__tab">
+                                    <button type="button" class="descr-product__tab-btn tab">Характеристики</button>
+                                </li>
+                            </ul>
+                            <ul class="descr-product__content">
+                                <li class="descr-product__text descr-product__text_descr"></li>
+                                <li class="descr-product__text descr-product__text_spec"></li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>                
+            </div>       
+        </div>
+    </div>
+</div>

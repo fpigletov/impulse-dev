@@ -1,0 +1,22 @@
+.similar-products
+
+    &__title
+        color: $light-grey
+        margin-bottom: 20px
+        @media (max-width: $md3)
+            font-size: 26px
+        @media (max-width: $md4)
+            margin-bottom: 10px
+
+    &__body
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        min-height: 360px
+        @media (max-width: $md4)
+            justify-content: center
+
+    &__item
+        height: 100%
+        &:not(:last-child)
+            margin-right: 20px

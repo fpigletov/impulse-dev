@@ -1,0 +1,44 @@
+.news
+
+    &__title
+        margin-bottom: 30px
+        color: $main-color
+        @media (max-width: $md2)
+            margin-bottom: 20px
+
+    &__item
+        display: block
+        transition: background-color 0.3s ease 0s
+        padding: 10px
+        border-radius: 10px
+        &:not(:last-child)
+            margin-bottom: 20px
+        @media (any-hover: hover)
+            &:hover
+                background-color: $minor-color
+                .side-label,
+                .news__date,
+                .news__text
+                    color: $light-color
+        @media (max-width: $md2)
+            margin-bottom: 12px
+
+    &__label
+        margin-bottom: 15px
+
+    &__block
+        display: flex
+        align-items: flex-start
+
+    &__date
+        transition: color 0.3s ease 0s
+        font-size: 18px
+        font-weight: 300
+        color: $light-grey
+        margin-right: 15px
+
+        span
+            display: block
+            font-size: 24px
+            font-weight: 900
+            text-transform: uppercase

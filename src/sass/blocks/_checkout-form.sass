@@ -1,0 +1,354 @@
+.checkout
+
+    &__title
+        color: $light-grey
+        margin-bottom: 10px
+        @media (max-width: $md4)
+            margin-bottom: 20px
+            font-size: 26px
+
+    &__content
+        padding: 30px
+        @media (max-width: 824px)
+            padding: 15px 50px
+        @media (max-width: 650px)
+            padding: 15px
+        @media (max-width: $md4)
+            padding: 0
+
+    &__tabs
+        display: flex
+        align-items: center
+        margin-bottom: 30px
+        @media (max-width: $md2)
+            flex-wrap: wrap
+            justify-content: center
+
+    &__tab
+        &:not(:last-child)
+            margin-right: 30px
+            @media (max-width: $md1)
+                margin-right: 14px
+        @media (max-width: $md3)
+            &:not(:last-child)
+                margin-bottom: 10px
+
+    &__order
+        padding-top: 30px
+
+.tab-block
+
+    &__wrapper
+        @media (min-width: 825px)
+            display: flex
+
+    &__column
+        flex: 0 1 50%
+        &:not(:last-child)
+            margin-right: 40px
+        @media (max-width: 824px)
+            width: 100%
+            &:not(:last-child)
+                margin: 0 0 30px 0
+
+    &__label
+        display: block
+        margin-bottom: 15px
+        @media (min-width: $md1)
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 25px
+            flex-wrap: wrap
+
+        &_textarea
+            align-items: flex-start
+
+        &_checkbox
+            cursor: pointer
+            margin: 20px 0 0 0
+            justify-content: flex-end
+
+    &__name
+        display: block
+        font-size: 14px
+        font-weight: 900
+        color: $black-color
+        span
+            color: $minor-color
+        @media (max-width: $md1)
+            margin-bottom: 5px
+        @media (max-width: 600px)
+            &:not(:last-child)
+                margin-bottom: 5px
+
+    &__input
+        display: block
+        width: 216px
+        height: 31px
+        border: 1px solid $light-grey
+        outline: none
+        padding: 0 10px
+        font-size: 14px
+        font-weight: 300
+        color: $grey-color
+        transition: box-shadow 0.3s ease
+        &:focus
+            box-shadow: 0 0 3px 1px $minor-color
+        @media (max-width: $md1)
+            width: 100%
+
+    input[type=number]
+        -moz-appearance: textfield
+
+    &__tag
+        font-size: 12px
+        font-weight: 300
+        color: $grey-color
+        padding-left: 25px
+
+    &__text
+        font-size: 14px
+        line-height: 120%
+        font-weight: 300
+        color: $grey-color
+        &:not(:last-child)
+            margin-bottom: 15px
+        span
+            color: $minor-color
+            font-weight: 900
+
+    &__textarea
+        width: 216px
+        min-height: 121px
+        border: 1px solid $light-grey
+        resize: vertical
+        outline: none
+        padding: 10px
+        font-size: 14px
+        font-weight: 300
+        color: $grey-color
+        transition: box-shadow 0.3s ease
+        &:focus
+            box-shadow: 0 0 3px 1px $minor-color
+        @media (max-width: $md1)
+            width: 100%
+
+    &__select,
+    .choices
+        width: 216px
+        height: 31px
+        @media (max-width: $md1)
+            width: 100%
+
+    .choices
+        transition: box-shadow 0.3s ease
+        &.is-focused
+            border-color: $light-grey
+            box-shadow: 0 0 3px 1px $minor-color
+
+    .choices__inner
+        min-height: 31px
+
+    .js-validate-error-label
+        @media (min-width: $md1)
+            margin-top: 5px
+            margin-left: auto
+
+.order-checkout
+
+    &__title
+        margin-bottom: 30px
+        color: $light-grey
+        @media (max-width: $md4)
+            margin-bottom: 20px
+
+    &__items
+        margin-bottom: 20px
+        @media (max-width: $md4)
+            margin-bottom: 25px
+
+    &__item
+        padding: 20px
+        border: 1px solid $pale-grey
+        &:not(:last-child)
+            margin-bottom: 15px
+        @media (max-width: 1100px)
+            padding: 10px 10px
+        @media (max-width: 700px)
+            padding: 0 10px
+
+    &__footer
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        padding-right: 20px
+        @media (max-width: 700px)
+            padding-right: 10px
+        @media (max-width: $md4)
+            padding: 0
+
+    &__total
+        font-size: 24px
+        font-weight: 900
+        text-transform: uppercase
+        color: $black-color
+        margin-bottom: 15px
+        span
+            font-size: 36px
+            color: $minor-color
+        @media (max-width: 700px)
+            font-size: 20px
+            span
+                font-size: 28px
+
+    &__icon
+        display: inline-block
+        font-size: 24px
+        color: $minor-color
+
+    &__btn
+        height: 36px
+        padding: 0 20px
+        border-radius: 20px
+        &.hold
+            opacity: 0.2
+            cursor: default
+
+    &__empty
+        text-align: center
+        padding: 50px 0 80px 0
+
+.empty-checkout
+    color: $light-grey
+
+    &__text
+        margin-bottom: 10px
+
+    &__link
+        font-size: 24px
+        font-weight: 700
+        a
+            color: $main-color
+            font-weight: 500
+            text-decoration: underline
+            text-decoration-color: $light-color
+            transition: all 0.3s ease 0s
+            @media (any-hover: hover)
+                &:hover
+                    text-decoration-color: $main-color
+
+.item-checkout
+
+    &__top
+        padding-top: 10px
+        display: flex
+        justify-content: flex-end
+
+    &__close
+        cursor: pointer
+        color: $pale-grey
+        background-color: $light-color
+        font-weight: 900
+        font-size: 24px
+        transition: all 0.3 ease 0s
+        align-self: flex-start
+        @media (any-hover: hover)
+            &:hover
+                color: $minor-color
+        @media (max-width: $md2)
+            color: $grey-color
+
+    &__wrapper
+        @media (min-width: 700px)
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+    &__content
+        display: flex
+        align-items: center
+        padding-right: 20px
+        @media (max-width: 700px)
+            padding: 0
+
+    &__image
+        flex: 0 0 100px
+        height: 100px
+        margin-right: 25px
+        img
+            height: 100%
+        @media (max-width: $md4)
+            margin-right: 10px
+
+    &__descr
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 144px
+        @media (max-width: 700px)
+            flex: 1 1 auto
+            padding-right: 20px
+
+    &__title
+        font-size: 14px
+        line-height: 130%
+        font-weight: 900
+        color: $main-color
+        transition: all 0.3s ease 0s
+        margin-bottom: 5px
+        span
+            display: block
+
+        @media (any-hover: hover)
+            &:hover
+                color: $hover-color
+
+    &__subtitle
+        font-weight: 300
+
+    &__price
+        font-size: 24px
+        font-weight: 900
+        color: $black-color
+        display: flex
+        align-items: flex-end
+        flex-direction: row-reverse
+        &::before
+            font-size: 18px
+            padding-left: 3px
+
+    &__info
+        flex: 0 1 390px
+        height: 100px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media (max-width: 1100px)
+            flex: 0 1 330px
+        @media (max-width: $md2)
+            flex: 0 1 360
+        @media (max-width: 700px)
+            align-items: flex-end
+            padding-bottom: 10px
+
+    &__quantity
+        flex: 0 1 130px
+
+    &__total
+        font-size: 16px
+        font-weight: 300
+        color: $grey-color
+        span
+            display: inline-block
+            font-size: 24px
+            font-weight: 900
+            color: $black-color
+            margin-top: 5px
+    &__tag
+        display: block
+
+    &__icon
+        display: inline-block
+        font-size: 16px
+        color: $black-color

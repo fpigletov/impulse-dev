@@ -1,0 +1,451 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 100
+    background-color: rgba(21, 21, 21, 0.75)
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.4s ease, visibility 0.4s ease
+    &.active
+        opacity: 1
+        visibility: visible
+        transition: opacity 0.4s ease, visibility 0.4s ease
+
+    &__body
+        position: relative
+        border-radius: 20px
+        background: url('../img/modal/modal-bg.jpg') center/cover no-repeat
+        filter: contrast(90%)
+        box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.6)
+        padding: 20px
+
+    &__close
+        position: absolute
+        top: -25px
+        right: -25px
+        cursor: pointer
+        color: $light-color
+        font-size: 26px
+        background-color: transparent
+        transition: color 0.3s ease 0s
+        @media (any-hover: hover)
+            &:hover
+                color: $minor-color
+        @media (max-width: $md2)
+            color: $minor-color
+        @media (max-width: $md4)
+            top: -35px
+            right: 0
+
+    &__content
+        border-radius: 20px
+        background-color: rgba(255, 255, 255, 0.5)
+
+    &__form_registration,
+    &__form_login,
+    &__form_callback,
+    &__message
+        width: 300px
+        height: 100%
+        @media (max-width: $md4)
+            width: 80vw
+            height: 100%
+
+    &__form_registration,
+    &__form_login,
+    &__form_callback,
+    &__message,
+    &__product
+        padding: 20px
+        display: none
+        &.active
+            display: block
+
+    &__message
+        text-align: center
+        font-size: 18px
+        font-weight: 900
+        color: $black-color
+
+    &__product
+        overflow-y: auto
+        overflow-x: hidden
+        width: 1100px
+        height: 480px
+        @media (max-width: $md1)
+            width: 85vw
+        @media (max-width: $md3)
+            height: 100%
+            width: 80vw
+        @media (max-width: $md4)
+            width: 85vw
+            height: 80vh
+
+.form-modal
+
+    &__title
+        color: $black-color
+        font-weight: 900
+        font-size: 20px
+        text-align: center
+        margin-bottom: 20px
+
+    &__content
+        width: 100%
+
+    &__item
+        display: block
+        &:not(:last-child)
+            margin-bottom: 15px
+
+    &__input
+        width: 100%
+        height: 30px
+        outline: none
+        padding: 0 10px
+        color: $grey-color
+        font-size: 12px
+        background-color: $light-color
+        transition: box-shadow 0.3s ease 0s
+        &:focus
+            box-shadow: 0 0 3px 3px $minor-color
+
+    &__name
+        display: block
+        margin-bottom: 3px
+        span
+            color: $main-color
+
+    &__checkbox
+        cursor: pointer
+        &:checked + .checkbox-tag
+            &::after
+                top: 3px
+
+    &__tag
+        font-size: 14px
+        line-height: 120%
+        cursor: pointer
+        padding-left: 25px
+        &::before
+            top: 0
+        &::after
+            top: 3px
+        a
+            font-weight: 700
+            color: $main-color
+            transition: color 0.3s ease 0s
+            @media (any-hover: hover)
+                &:hover
+                    color: $hover-color
+
+    &__btn
+        margin-top: 15px
+        width: 100%
+        border-radius: 10px
+
+.product
+
+    &__wrapper
+        height: 100%
+        width: 100%
+        // padding: 20px
+        // @media (max-width: $md4)
+        //     padding: 20px 10px
+
+    &__title
+        font-family: 'UniSans-Trial'
+        font-size: 36px
+        font-weight: 700
+        text-transform: uppercase
+        color: $black-color
+        margin-bottom: 5px
+        @media (max-width: $md3)
+            font-size: 30px
+        @media (max-width: $md4)
+            font-size: 25px
+
+    &__subtitle
+        font-weight: 700
+        text-transform: uppercase
+        font-size: 30px
+        color: $grey-color
+        margin-bottom: 20px
+        @media (max-width: $md3)
+            font-size: 26px
+        @media (max-width: $md4)
+            font-size: 22px
+
+    &__body
+        display: flex
+        margin-bottom: 30px
+        @media (max-width: $md3)
+            display: block
+        @media (max-width: $md4)
+            margin-bottom: 10px
+
+    &__slider
+        flex: 0 1 360px
+        min-width: 0
+        margin-right: 30px
+        @media (max-width: $md3)
+            margin: 0 0 20px 0
+
+    &__info
+        flex: 1 1 auto
+
+    &__descr
+        margin-bottom: 30px
+        @media (max-width: $md4)
+            margin-bottom: 15px
+
+//---------------------------Slider-product--------------------
+
+.slider-product
+
+    &__mainslider
+        margin-bottom: 13px
+
+    &__slide
+        cursor: pointer
+        border: 1px solid $pale-grey
+        height: 308px
+        position: relative
+        padding: 30px
+        img
+            max-width: 100%
+            max-height: 100%
+        @media (max-width: $md3)
+            padding: 10px
+
+    &__labels
+        position: absolute
+        top: 15px
+        left: 15px
+
+    &__label
+        width: 58px
+        height: 58px
+        border-radius: 50%
+        background-color: $minor-color
+        font-size: 16px
+        font-weight: 900
+        letter-spacing: 0.025em
+        color: $light-color
+        display: flex
+        align-items: center
+        justify-content: center
+        opacity: 0
+        visibility: hidden
+        transition: all 0.3s ease 0s
+        &:not(:last-child)
+            margin-bottom: 10px
+
+    &__subwrapper
+        display: flex
+        justify-content: center
+
+    &__subslide
+        cursor: pointer
+        border: 1px solid $pale-grey
+        flex: 0 1 81px
+        height: 68px
+        opacity: 0.5
+        transition: all 0.3s ease 0s
+        img
+            width: 100%
+            height: 100%
+            object-fit: fill
+
+    .swiper-slide-active
+        .slider-product__label
+            opacity: 1
+            visibility: visible
+
+    .swiper-slide-thumb-active
+        border: 3px solid $minor-color
+        opacity: 1
+
+//----------------------Info-Product-----------------
+
+.info-product
+
+    &__top
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        padding: 10px 0
+
+    &__label
+        padding: 0 15px
+        height: 32px
+        border-radius: 20px
+        background-color: $minor-color
+        color: $light-color
+        display: inline-flex
+        justify-content: center
+        align-items: center
+
+    &__actions
+        border-top: 1px solid $pale-grey
+        border-bottom: 1px solid $pale-grey
+        padding: 20px 0
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        @media (max-width: $md2)
+            flex-wrap: wrap
+            align-items: start
+            padding-top: 45px
+        @media (max-width: $md4)
+            padding: 20px 0
+
+    &__prices
+        display: flex
+        flex-direction: column
+        @media (max-width: $md2)
+            margin-bottom: 25px
+
+    &__old-price
+        font-size: 18px
+        font-weight: 600
+        text-decoration: line-through
+        color: $grey-color
+        margin-bottom: 5px
+
+    &__current-price
+        font-size: 24px
+        font-weight: 900
+        color: $black-color
+
+    &__quantity
+        flex: 0 0 120px
+        margin: 0 15px
+        @media (max-width: 375px)
+            margin: 0
+
+    &__add
+        position: relative
+        display: flex
+        align-items: center
+        padding-right: 42px
+        @media (max-width: $md2)
+            margin-bottom: 25px
+        @media (max-width: $md4)
+            margin-bottom: 5px
+        @media (any-hover: hover)
+            &:hover
+                .info-product__cart
+                    background-color: $dark-minor-color
+
+    &__tag
+        cursor: pointer
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        height: 34px
+        background-color: $pale-grey
+        font-size: 14px
+        padding: 5px 15px 5px 15px
+        font-weight: 900
+        text-transform: uppercase
+        color: $black-color
+
+    &__cart
+        cursor: pointer
+        position: absolute
+        top: -10px
+        left: 97px
+        width: 52px
+        height: 52px
+        border-radius: 50%
+        background-color: $minor-color
+        color: $light-color
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 22px
+        transition: all 0.3s ease 0s
+        @media (any-hover: hover)
+            &:hover
+                transform: scale(1.1)
+
+    &__include
+        padding: 15px 0
+
+.include-info
+    border-bottom: 1px solid $pale-grey
+
+    &__label
+        font-size: 14px
+        font-weight: 900
+        text-transform: uppercase
+        color: $black-color
+        margin-bottom: 15px
+        @media (max-width: $md4)
+            margin-bottom: 20px
+
+    &__body
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+        gap: 15px
+
+    &__item
+        text-align: center
+        // flex: 0 1 33.333%
+        // margin: 0 15px
+        // @media (max-width: $md2)
+        //     margin: 0 15px 15px 15px
+
+    &__icon
+        min-height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-bottom: 10px
+
+    &__text
+        font-size: 12px
+        line-height: 140%
+        font-weight: 500
+        color: $light-color
+
+.descr-product
+
+    &__tabs
+        padding-left: 15px
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        @media (max-width: $md4)
+            padding-left: 5px
+            justify-content: center
+
+    &__tab
+        margin-right: 15px
+        &:last-child
+            margin-right: 0
+        @media (max-width: $md4)
+            margin: 0 5px 10px 5px
+            padding: 0
+
+    &__content
+        min-height: 190px
+        padding: 30px
+        @media (max-width: $md4)
+            padding: 10px
+
+    &__text
+        height: 100%
+        overflow: hidden
+        font-size: 14px
+        line-height: 150%
+        font-weight: 300
+        color: $light-color
+        transition: all 0.3s ease 0s

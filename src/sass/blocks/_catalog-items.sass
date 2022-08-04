@@ -1,0 +1,131 @@
+.catalog-items
+
+    &__title
+        color: $light-grey
+        margin-bottom: 20px
+
+    &__actions
+        padding: 10px 20px
+        margin-bottom: 15px
+
+    &__navi
+        padding: 10px 20px
+
+    &__products
+        padding: 20px 0
+
+    &__choice
+        margin-bottom: 5px
+        padding: 10px 0
+
+    &__more
+        display: flex
+        justify-content: center
+
+    &__btn
+        margiN: 20px 0
+
+.actions-catalog
+    background-color: $pale-grey
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__sort
+        width: 100%
+        display: flex
+        align-items: center
+
+    &__label
+        flex: 0 1 auto
+        margin-right: 15px
+
+    &__select
+        flex: 0 0 166px
+
+    .choices
+        width: 166px
+
+.choice-catalog
+    display: none
+
+    &__wrapper
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+
+    &__item
+        cursor: pointer
+        display: inline-flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: row-reverse
+        padding: 5px 10px
+        font-size: 12px
+        font-weight: 700
+        color: $black-color
+        background-color: $light-grey
+        border-radius: 20px
+        margin: 0 10px 10px 0
+        transition: all 0.3s ease 0s
+        &:before
+            font-size: 10px
+            margin-left: 5px
+        @media (any-hover: hover)
+            &:hover
+                color: $light-grey
+                background-color: $black-color
+
+    &__clear
+        display: block
+        position: relative
+        font-size: 12px
+        font-weight: 700
+        color: $black-color
+        background-color: $light-color
+        margin-bottom: 10px
+        &:before
+            position: absolute
+            content: ''
+            bottom: -1px
+            left: 0
+            height: 2px
+            background-color: $light-color
+            width: 100%
+            transition: all 0.3s ease 0s
+            @media (max-width: $md2)
+                background-color: $black-color
+        @media (any-hover: hover)
+            &:hover
+                &:before
+                    background-color: $black-color
+
+.catalog-label
+    font-size: 14px
+    line-height: 120%
+    font-weight: 900
+    color: $black-color
+
+.navi-catalog
+    border-top: 2px solid $pale-grey
+    border-bottom: 2px solid $pale-grey
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media (max-width: $md3)
+        flex-direction: column
+        align-items: start
+
+    &__sort
+        flex: 1 1 auto
+        display: flex
+        align-items: center
+
+    &__label
+        margin-right: 15px
+
+    &__select
+        flex: 0 0 61px
+
+    .choices
+        width: 61px

@@ -1,0 +1,69 @@
+.about
+
+    &__container
+        background-color: $main-color
+        padding: 40px 55px 60px 30px
+        @media (max-width: $md1)
+            padding: 40px 40px 35px 40px
+        @media (max-width: $md3)
+            padding: 20px 20px 15px 20px
+
+    &__title
+        font-family: 'UniSans-Trial'
+        font-size: 30px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: 0.025em
+        color: #f88c8c
+        margin-bottom: 25px
+        @media (max-width: $md3)
+            margin-bottom: 15px
+
+    &__info
+        @media (min-width: $md3)
+            display: flex
+            position: relative
+
+    &__column
+        flex: 0 1 50%
+        margin: 0 55px 25px 0
+        &:last-child
+            margin-right: 0
+        @media (max-width: $md3)
+            margin: 0 0 15px 0
+
+    &__text
+        font-size: 12px
+        line-height: 166.666%
+        font-weight: 400
+        letter-spacing: 0.025em
+    p.about__text
+        &:not(:last-child)
+            margin-bottom: 25px
+        @media (max-width: $md3)
+            margin-bottom: 15px
+
+    &__label
+        font-size: 12px
+        line-height: 166.666%
+        font-weight: 900
+        text-transform: uppercase
+        letter-spacing: 0.025em
+
+    li.about__text
+        &::before
+            font-size: 12px
+            display: inline-block
+            margin: 0 15px 0 5px
+            color: #f88c8c
+
+    &__image
+        position: absolute
+        bottom: -250px
+        right: -120px
+        @media (max-width: $md1)
+            display: none
+
+    br
+        @media (max-width: $md1)
+            display: none

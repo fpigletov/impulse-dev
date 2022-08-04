@@ -1,0 +1,111 @@
+.contacts
+
+    &__title
+        color: $light-grey
+        margin-bottom: 10px
+        @media (max-width: $md4)
+            margin-bottom: 0
+
+    &__body
+        display: flex
+        align-items: flex-start
+        @media (max-width: $md3)
+            flex-direction: column
+
+    &__content
+        padding: 20px 20px 20px 0
+        flex: 0 1 320px
+        @media (max-width: $md4)
+            flex: 1 1 auto
+            width: 100%
+            padding: 10px 10px 10px 0
+
+    &__item
+        padding: 20px 0
+        @media (max-width: $md2)
+            padding: 10px 0
+
+    &__subtitle
+        color: $black-color
+        font-size: 20px
+        font-weight: 700
+        margin-bottom: 20px
+
+    &__phone
+        display: inline-block
+        color: $grey-color
+        font-size: 24px
+        font-weight: 700
+        margin-bottom: 10px
+
+    &__address
+        color: $minor-color
+        font-size: 20px
+        font-weight: 500
+        line-height: 120%
+
+    &__map
+        height: 350px
+        flex: 1 1 auto
+        @media (max-width: $md3)
+            width: 100%
+
+.tooltip
+    display: none
+    @media (any-hover: hover)
+        display: inline-block
+        position: relative
+        margin-left: 10px
+
+    &__btn
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 100%
+        width: 20px
+        height: 20px
+        font-size: 14px
+        box-shadow: 2px 4px 10px rgba(0, 13, 84, 0.2)
+        background: $light-color
+
+        &:hover + .tooltip__text
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+
+        &:focus + .tooltip__text
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+
+    &__text
+        position: absolute
+        left: -10px
+        bottom: calc(100% + 14px)
+        z-index: 3
+        border-radius: 4px
+        padding: 10px
+        width: max-content
+        max-width: 426px
+        box-shadow: 4px 8px 20px rgba(0, 13, 84, 0.2)
+        font-size: 16px
+        text-transform: initial
+        font-weight: 300
+        color: $grey-color
+        background: $light-color
+        opacity: 0
+        visibility: hidden
+        transform: translateY(10px)
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out
+
+        &::after
+            content: ""
+            position: absolute
+            left: 10px
+            bottom: -8px
+            border-style: solid
+            border-width: 10px 8px 0
+            border-color: $light-color transparent transparent transparent
+            border-radius: 4px
+            width: 0
+            height: 0

@@ -1,0 +1,48 @@
+.brands-slider
+    border-top: 3px dashed $light-grey
+    border-bottom: 3px dashed $light-grey
+
+    &__container
+        padding: 15px 60px
+        position: relative
+
+    &__body
+        height: 100%
+
+    &__wrapper
+        height: 100%
+        display: flex
+        align-items: center
+
+    &__item
+        display: block
+        height: 100px
+        width: 100px
+        display: flex
+        justify-content: center
+        @media (any-hover: hover)
+            transition: all 0.3s ease 0s
+            filter: grayscale(1)
+            &:hover
+                filter: grayscale(0)
+        img
+            height: 100%
+
+    &__arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+        transition: all 0.3s ease 0s
+        color: $black-color
+        font-size: 25px
+        @media (any-hover: hover)
+            &:hover
+                transform: translateY(-50%) scale(1.2)
+                color: $minor-color
+
+        &_prev
+            left: 10px
+
+        &_next
+            right: 10px

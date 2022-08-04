@@ -1,0 +1,204 @@
+<form action="#" method="POST" enctype="multipart/form-data" class="central__checkout checkout">
+    <h2 class="checkout__title title">Оформление заказа</h2>
+    <div class="checkout__content">
+        <ul class="checkout__tabs">
+            <li class="checkout__tab">
+                <button type="button" class="checkout__tab-btn tab">Быстрый заказ</button>
+            </li>
+            <li class="checkout__tab">
+                <button type="button" class="checkout__tab-btn tab">Курьером по москве и МО</button>
+            <li class="checkout__tab">
+                <button type="button" class="checkout__tab-btn tab">Доставка в регионы</button>
+            </li>
+        </ul>
+        <ul class="checkout__body">
+            <li class="checkout__tab-block tab-block">
+                <div class="tab-block__wrapper">
+                    <div class="tab-block__column">
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Имя:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Name" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">E-mail:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Email" type="email" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Моб. телефон:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Phone" type="tel" data-validate-field>
+                        </label>
+                        <label class="tab-block__label tab-block__label_checkbox">
+                            <input data-name="Subscribe" type="checkbox" class="tab-block__checkbox checkbox" value="Подписаться_на_новости">
+                            <span class="tab-block__tag checkbox-tag">Подписаться на новости и скидки</span>
+                        </label>
+                    </div>
+                    <div class="tab-block__column">
+                        <p class="tab-block__text">
+                            <span>*</span> Поля, обязательные для заполнения
+                        </p>
+                        <p class="tab-block__text">
+                            Отправка товара производится только после 100% оплаты
+                            товара. Стоимость доставки возможно оплатить при 
+                            получении заказа.
+                        </p>
+                        <p class="tab-block__text">
+                            Интернет-магазин не несет ответственности за задержку 
+                            доставки заказа, связанную с работой курьерских служб DPD 
+                            и EMS Почты России.
+                        </p>
+                    </div>
+                </div>                                    
+            </li>
+            <li class="checkout__tab-block tab-block">
+                <div class="tab-block__wrapper">
+                    <div class="tab-block__column">
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Фамилия:<span>*</span></span>                            
+                            <input class="tab-block__input"autocomplete="off" data-name="Surname" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Имя:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Name" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Отчество:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Secondname" type="text" data-validate-field>
+                        </label>                        
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Моб. телефон:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Phone" type="tel" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">E-mail:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Email" type="email" data-validate-field>
+                        </label>
+                        <div class="tab-block__label">
+                            <div class="tab-block__name">Способ оплаты:<span>*</span></div>
+                            <select name="Payment" class="tab-block__select tab-block__select_moscow">                    
+                                <option class="tab-block__option" value="Банковской_картой">Банковской картой</option>
+                                <option class="tab-block__option" value="Наличными">Наличными</option>
+                                <option class="tab-block__option" value="Банковский_перевод">Банковский перевод</option>
+                            </select>
+                        </div>  
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Адрес доставки:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Address" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label tab-block__label_textarea">
+                            <span class="tab-block__name">Комментарии:<span>*</span></span>                            
+                            <textarea class="tab-block__textarea" data-name="Comments">
+                        </label>                        
+                        <label class="tab-block__label tab-block__label_checkbox">
+                            <input data-name="Subscribe" type="checkbox" class="tab-block__checkbox checkbox" value="Подписаться_на_новости">
+                            <span class="tab-block__tag checkbox-tag">Подписаться на новости и скидки</span>
+                        </label>
+                    </div>
+                    <div class="tab-block__column">
+                        <p class="tab-block__text">
+                            <span>*</span> Поля, обязательные для заполнения
+                        </p>
+                        <p class="tab-block__text">
+                            Отправка товара производится только после 100% оплаты
+                            товара. Стоимость доставки возможно оплатить при 
+                            получении заказа.
+                        </p>
+                        <p class="tab-block__text">
+                            Интернет-магазин не несет ответственности за задержку 
+                            доставки заказа, связанную с работой курьерских служб DPD 
+                            и EMS Почты России.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="checkout__tab-block tab-block">
+                <div class="tab-block__wrapper">
+                    <div class="tab-block__column">
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Фамилия:<span>*</span></span>                            
+                            <input class="tab-block__input"autocomplete="off" data-name="Surname" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Имя:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Name" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Отчество:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Secondname" type="text" data-validate-field>
+                        </label>                        
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Моб. телефон:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Phone" type="tel" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">E-mail:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Email" type="email" data-validate-field>
+                        </label>
+                        <div class="tab-block__label">
+                            <div class="tab-block__name">Способ оплаты:<span>*</span></div>
+                            <select name="Payment" class="tab-block__select tab-block__select_region">                    
+                                <option class="tab-block__option" value="Банковской_картой">Банковской картой</option>
+                                <option class="tab-block__option" value="Наличными">Наличными</option>
+                                <option class="tab-block__option" value="Банковский_перевод">Банковский перевод</option>
+                            </select>
+                        </div>  
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Индекс:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Index" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Город:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="City" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label">
+                            <span class="tab-block__name">Адрес доставки:<span>*</span></span>                            
+                            <input class="tab-block__input" autocomplete="off" data-name="Address" type="text" data-validate-field>
+                        </label>
+                        <label class="tab-block__label tab-block__label_textarea">
+                            <span class="tab-block__name">Комментарии:<span>*</span></span>                            
+                            <textarea class="tab-block__textarea" data-name="Comments">
+                        </label>                        
+                        <label class="tab-block__label tab-block__label_checkbox">
+                            <input data-name="Subscribe" type="checkbox" class="tab-block__checkbox checkbox" value="Подписаться_на_новости">
+                            <span class="tab-block__tag checkbox-tag">Подписаться на новости и скидки</span>
+                        </label>
+                    </div>
+                    <div class="tab-block__column">
+                        <p class="tab-block__text">
+                            <span>*</span> Поля, обязательные для заполнения
+                        </p>
+                        <p class="tab-block__text">
+                            Отправка товара производится только после 100% оплаты
+                            товара. Стоимость доставки возможно оплатить при 
+                            получении заказа.
+                        </p>
+                        <p class="tab-block__text">
+                            Доставка в регионы осуществляется EMS Почтой России 
+                            (в течение 5-14 дней) и курьерской службой DPD (в течение 
+                            3-5 дней) с момента передачи заказа в службу доставки. 
+                            Стоимость зависит от веса заказа и расстояния. В некоторые 
+                            регионы доставка возможна только посредством EMS Почты 
+                            России, способ доставки уточняйте у оператора при 
+                            оформлении заказа.
+                        </p>
+                        <p class="tab-block__text">
+                            Интернет-магазин не несет ответственности за задержку 
+                            доставки заказа, связанную с работой курьерских служб DPD 
+                            и EMS Почты России.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="checkout__order order-checkout">
+        <h2 class="order-checkout__title title">Ваш заказ</h2>
+        <ul class="order-checkout__items">                                
+        </ul>
+        <div class="order-checkout__footer">
+            <div class="order-checkout__total">
+                Итого: <span> 0</span><div class="order-checkout__icon icon-ruble-sign-solid"></div>                                   
+            </div>
+            <button type="submit" class="order-checkout__btn btn">Оформить заказ</button>
+        </div>
+    </div>
+</form>  
