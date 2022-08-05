@@ -287,7 +287,10 @@
 
     &__actions
         padding-left: 20px
+        display: flex
+        align-items: center
         @media (max-width: $md3)
+            justify-content: space-evenly
             padding-left: 0
 
     &__info
@@ -299,12 +302,10 @@
             flex-direction: column
 
 .actions-header
-    display: flex
-    align-items: center
-    @media (max-width: $md3)
-        justify-content: space-evenly
 
     &__item
+        display: flex
+        align-items: center
         margin-right: 50px
         @media (max-width: $max-width-container)
             margin-right: calc(30px / $max-width-container * 100vw)
@@ -316,27 +317,35 @@
     &__link
         display: inline-flex
         color: $main-color
+        align-items: stretch
+        @media (any-hover: hover)
+            &:hover
+                .actions-header__icon
+                    color: $main-color
+        @media (max-width: 600px)
+            .actions-header__icon
+                font-size: 36px
+                color: $light-color
+            .actions-header__label
+                font-size: 30px
+                color: $light-color
+        @media (max-width: $md4)
+            .actions-header__icon
+                font-size: 22px
+            .actions-header__label
+                font-size: 20px
+
+    &__btn
+        display: inline-flex
+        color: $main-color
         align-items: center
         @media (any-hover: hover)
             &:hover
                 .actions-header__icon
                     color: $main-color
-        &_mail
-            align-items: stretch
-            @media (max-width: 600px)
-                .actions-header__icon
-                    font-size: 36px
-                    color: $light-color
-                .actions-header__label
-                    font-size: 30px
-                    color: $light-color
-            @media (max-width: $md4)
-                .actions-header__icon
-                    font-size: 22px
-                .actions-header__label
-                    font-size: 20px
 
     &__icon
+        display: block
         font-size: 20px
         margin-right: 12px
         color: $main-color
@@ -348,6 +357,7 @@
             font-size: 18px
 
     &__label
+        display: block
         font-family: Roboto
         font-size: 14px
         font-weight: 300
