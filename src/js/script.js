@@ -18,6 +18,7 @@ import { searchLogic } from './components/modules';
 
 window.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.side-link');
+    const menuItems = document.querySelectorAll('[data-link]');
     const sideBurgerBtn = document.querySelector('.side-menu__burger');
     const sideBody = document.querySelector('.side-menu__body');
     const sideMenu = document.querySelector('.central__menu');   
@@ -40,10 +41,17 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    //Modals
+    //Registration Modal
     modal('#registration', '.modal__form_registration');
+
+    //Login Modal
     modal('#login', '.modal__form_login');
+
+    //Callback Modal
     modal('#callback', '.modal__form_callback');
+
+    //Product Modal
+    modal('show-product-btn', '.modal__product');
 
     //Preloader
     window.addEventListener('load', () => {
@@ -56,10 +64,9 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Side Menu
-    menuLinks.forEach(item => {
-
-        const actionsOnClick = () => {
+    // Side Menu    
+    function actionsOnClick() {
+        menuLinks.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 menuLinks.forEach(item => {
@@ -69,11 +76,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
                 e.currentTarget.classList.toggle('active');
             });
-        };
+        });
+    } 
 
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            actionsOnClick();
-        } else {
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+
+        actionsOnClick();
+
+    } else {
+
+        menuItems.forEach(item => {        
             item.addEventListener('mouseover', (e) => {
                 e.preventDefault();
                 item.classList.add('active');
@@ -83,10 +95,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 item.classList.remove('active');
             });
+        });
 
-            actionsOnClick();
-        }
-    });
+        actionsOnClick();
+    }
+    
 
     //Side Burger 
     sideBurgerBtn.addEventListener('click', (e) => {
@@ -154,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const bottomHeaderInfo = document.querySelector('.bottom-header__info');
     const headerInfoColumns = document.querySelectorAll('.info-header__column');    
     const rightBottomColumn = document.querySelector('.bottom-header__column_right');
-    const actionsLinks = document.querySelectorAll('.actions-header__link');
+    const actionsLink = document.querySelector('.actions-header__link');
     const actionsItems = document.querySelectorAll('.actions-header__item');
     const contactsIcon = document.querySelector('.contacts-header__icon');
 
@@ -193,10 +206,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (viewportWidth <= 600) {
-            headerInfoColumns[2].append(actionsLinks[2]);
+            headerInfoColumns[2].append(actionsLink);
             actionsItems[2].append(contactsIcon);
         } else {
-            actionsItems[2].append(actionsLinks[2]);
+            actionsItems[2].append(actionsLink);
             contactsHeaderItem.prepend(contactsIcon);
         }
 

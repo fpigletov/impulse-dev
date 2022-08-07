@@ -6,15 +6,9 @@ export function loadingProducts() {
     const moreBtn = document.querySelector('.catalog-items__btn');
     const popular = document.querySelector('.popular');
     const popularItemsList = document.querySelector('.popular__body');
-    const wrapper = document.querySelector('.wrapper');
-    const modal = document.querySelector('.modal');    
+    const wrapper = document.querySelector('.wrapper');    
     let productQuantity = 0;
     let dataLength = null;
-
-    const scrollWidth = window.innerWidth - wrapper.offsetWidth + 'px';
-    const product = document.querySelector('.modal__product');
-    const header = document.querySelector('.header');
-    const closeProductBtn = document.querySelector('.modal__close');
 
     //Convert to Normal Price
     function normalPrice(str) {
@@ -59,7 +53,7 @@ export function loadingProducts() {
                                 </div>
                                 <div class="item-product__footer">
                                     <div class="item-product__price product-price">${normalPrice(item.price)}₽</div>
-                                    <div class="item-product__old-price product-old-price">${normalPrice(item.oldPrice ? item.oldPrice + '₽': '')}</div>
+                                    <div class="item-product__old-price product-old-price">${normalPrice(item.oldPrice ? item.oldPrice + '₽' : '')}</div>
                                 </div>
                                 <div class="item-product__hover hover-item">
                                     <div class="hover-item__title">
@@ -86,7 +80,7 @@ export function loadingProducts() {
 
                         `;
                     }
-                }                        
+                }
             });
     };
 
@@ -201,7 +195,33 @@ export function loadingProducts() {
                         
                     }
                 }
-            });    
+            })
+            .then(() => {
+                let sliderProductSlides = new Swiper(".slider-product__subslider", {
+                    loop: false,
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    freeMode: true,
+                    
+                    watchSlidesProgress: true,
+                });
+                
+                let sliderProduct = new Swiper(".slider-product__mainslider", {
+                    loop: true,
+                    spaceBetween: 10,
+                    keyboard: {
+                        enabled: true,
+                        onlyInViewport: true,
+                    },
+                    effect: 'fade',
+                    zoom: {
+                        maxRatio: 3,
+                    },
+                    thumbs: {
+                        swiper: sliderProductSlides,
+                    },
+                });
+            });
     
     };
 
@@ -209,42 +229,11 @@ export function loadingProducts() {
         const target = e.target;
         
         if (target.classList.contains('show-product-btn')) {
-            e.preventDefault();
-            // const itemId = e.target.closest('.item-product').dataset.id;
+            e.preventDefault();            
             const itemId = e.target.getAttribute('data-show-id');
             loadProductData(itemId);
-
-            product.classList.add('active');
-            product.scrollTop = 0;
-            modal.classList.add('active');            
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = scrollWidth;
-            header.style.paddingRight = scrollWidth;
         }
         
-    });
-
-    function closeProductModal() {        
-        product.scrollTop = 0;
-        modal.classList.remove('active');
-        product.classList.remove('active');        
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-        header.style.paddingRight = '';  
-    }
-
-    closeProductBtn.addEventListener('click', closeProductModal);
-
-    product.addEventListener('click', (e) => {
-        if (e.target === product) {
-            closeProductModal();
-        }
-    });
-
-    window.addEventListener('keydown', (e) => {
-        if (e.code === 'Escape' && product.classList.contains('active')) {
-            closeProductModal();
-        }
     });
 
     
@@ -263,11 +252,11 @@ export function loadingProducts() {
                     el.innerHTML = '';
                 });
                     
-                    for (let i = 0; i < submenuProducts.length; i++) {
+                for (let i = 0; i < submenuProducts.length; i++) {
                         
-                        let item = data.products[i];
+                    let item = data.products[i];
                         
-                        submenuProducts[i].innerHTML = `                        
+                    submenuProducts[i].innerHTML = `                        
                             
                             <li data-id="${item.id}" class="item-product">                                        
                                 <div class="item-product__image">
@@ -290,12 +279,12 @@ export function loadingProducts() {
                                 </div>
                                 <div class="item-product__footer">
                                     <div class="item-product__price product-price">${normalPrice(item.price)}₽</div>
-                                    <div class="item-product__old-price product-old-price">${normalPrice(item.oldPrice ? item.oldPrice + '₽': '')}</div>
+                                    <div class="item-product__old-price product-old-price">${normalPrice(item.oldPrice ? item.oldPrice + '₽' : '')}</div>
                                 </div>                                
                             </li>
 
-                        `;                        
-                    } 
+                        `;
+                }
             });
     };
 

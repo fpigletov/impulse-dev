@@ -69,31 +69,6 @@ export function sliders() {
             },
         });
     }
-    
-    //Product-Slider
-    if (document.querySelector('.modal__product')) {
-
-        let sliderProductSlides = new Swiper(".slider-product__subslider", {
-            loop: false,
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            
-            watchSlidesProgress: true,
-        });
-        
-        let sliderProduct = new Swiper(".slider-product__mainslider", {
-            loop: true,
-            spaceBetween: 10,
-            effect: 'fade',
-            zoom: {
-                maxRatio: 3,
-            },
-            thumbs: {
-                swiper: sliderProductSlides,
-            },
-        });        
-    }
 
     //Filter Drag Slider
     const filterSlider = document.querySelector('.slider-filter__item');

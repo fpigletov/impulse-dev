@@ -141,29 +141,46 @@ export function modal(triggerSelector, contentSelector) {
         });      
     };
 
-    trigger.addEventListener('click', (e) => {
-        if (e.target) {
-            e.preventDefault();
-        }
+    if (triggerSelector === 'show-product-btn') {
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains(triggerSelector)) {
+                e.preventDefault();
+                openModal();
+            }
+        });
+    } else {
+        trigger.addEventListener('click', (e) => {
+            if (e.target) {
+                e.preventDefault();
+            }
         openModal();
     }); 
+    }
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+    
+
+    document.addEventListener('click', (e) => {
+        const target = e.target;        
+
+        if (target === modal && modal.classList.contains('active') &&
+            modalContent.classList.contains('active')) {
             closeModal();
-        }
+        }        
     });
 
     window.addEventListener('keydown', (e) => {
-        if (e.code === 'Escape' && modal.classList.contains('active') && modalContent.classList.contains('active')) {
+        if (e.code === 'Escape' && modal.classList.contains('active') &&
+            modalContent.classList.contains('active')) {
             closeModal();
             lastFocusedEl.focus();
         }
     });
     
     modalCloseBtn.addEventListener('click', () => {
-        closeModal();
-        lastFocusedEl.focus();
+        if (modal.classList.contains('active') && modalContent.classList.contains('active')) {
+            closeModal();
+            lastFocusedEl.focus();
+        }
     });
 }
 
@@ -188,21 +205,21 @@ export function showMarketing() {
             }, marketingDelay - 3000);
 
             fetch('https://fpigletov-db.herokuapp.com/impulse/')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                let item = data.products[marketingCounter];
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    let item = data.products[marketingCounter];
 
-                marketing.querySelector('.marketing__image img').setAttribute('src', `${item.mainImageJpg}`);
-                marketing.querySelector('.marketing__image img').setAttribute('alt', `${item.mainImageAlt}`);
-                marketing.querySelector('.marketing__customer-name').textContent = `${item.customerName}`;
-                marketing.querySelector('.marketing__title').setAttribute('data-show-id', `${item.id}`);
-                marketing.querySelector('.marketing__title').textContent = `${item.title}`;
-                marketing.querySelector('.marketing__subtitle').textContent = `${item.subtitle}`;
-                marketing.querySelector('.marketing__when').textContent = `${item.when}`;
-                marketing.querySelector('.marketing__where').textContent = `${item.where}`;
-            });
+                    marketing.querySelector('.marketing__image img').setAttribute('src', `${item.mainImageJpg}`);
+                    marketing.querySelector('.marketing__image img').setAttribute('alt', `${item.mainImageAlt}`);
+                    marketing.querySelector('.marketing__customer-name').textContent = `${item.customerName}`;
+                    marketing.querySelector('.marketing__title').setAttribute('data-show-id', `${item.id}`);
+                    marketing.querySelector('.marketing__title').textContent = `${item.title}`;
+                    marketing.querySelector('.marketing__subtitle').textContent = `${item.subtitle}`;
+                    marketing.querySelector('.marketing__when').textContent = `${item.when}`;
+                    marketing.querySelector('.marketing__where').textContent = `${item.where}`;
+                });
 
             marketingCounter++;
 
@@ -322,7 +339,6 @@ export function searchLogic() {
     const searchIcon = document.querySelectorAll('.search__icon');
     const submitSearchForm = document.querySelector('.search');
     const searchResultBody = document.querySelector('.search-result');
-    const searchResult = document.querySelector('.search-result');
 
     selectBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -365,7 +381,6 @@ export function searchLogic() {
         e.preventDefault();
 
         search(searchInput.value);
-        // searchResult.style.display = 'block';
         searchInput.value = '';
     });
 
@@ -417,8 +432,7 @@ export function searchLogic() {
                         falseResult();
                         
                     }
-                })
-                .catch(err => alert(err));
+                });
         }        
     }
 }

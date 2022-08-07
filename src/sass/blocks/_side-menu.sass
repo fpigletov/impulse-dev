@@ -43,36 +43,31 @@
         border-bottom: 1px solid $light-color
         transition: all 0.5s ease 0s
 
-    // &__item[data-link].active
-    //     .submenu-side__item
-    //         display: block
-    //         @media (min-width: $md2)
-    //             z-index: 20
-    //             opacity: 1
-    //             visibility: visible
-    //             transform: translateX(0)
-    //             transition: transform 0.3s ease 0s
+    &__item[data-link].active
+        .submenu-side__item,
+        .side-menu__submenu
+            @media (min-width: $md2)
+                z-index: 20
+                opacity: 1
+                visibility: visible
+                transform: translateX(0)
+                transition: transform 0.3s ease 0s
 
-    //     .side-menu__link
-    //         background-color: $hover-color
+        .side-menu__link
+            background-color: $hover-color
 
-    //     .item-product__btn
-    //         opacity: 1
-    //         visibility: visible
+        .item-product__btn
+            opacity: 1
+            visibility: visible
 
-    //     .side-menu__icon
-    //         transform: rotate(-180deg)
-    //         @media (max-width: $md2)
-    //             transform: rotate(-90deg)
-    //     .side-menu__submenu
-    //         @media (min-width: $md2)
-    //             opacity: 1
-    //             visibility: visible
-    //             transition: opacity 0.3s ease 0s, visability 0.3s ease 0s
+        .side-menu__icon
+            transform: rotate(-180deg)
 
     &__link
         display: flex
         justify-content: space-between
+        align-items: center
+        width: 100%
         padding: 10px 15px 10px 20px
         font-size: 12px
         font-weight: 300
@@ -113,7 +108,7 @@
             padding: 15px 26px 15px 20px
 
     &__icon
-        display: inline-block
+        display: block
         font-size: 12px
         transition: all 0.3s ease 0s
         @media (max-width: $md2)

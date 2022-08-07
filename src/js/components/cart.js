@@ -130,17 +130,17 @@ export function cartLogic() {
         const cartProduct = document.querySelector(`[data-cart-id="${id}"]`);   
         
         fetch('https://fpigletov-db.herokuapp.com/impulse/')
-        .then((response) => {
-            return response.json();
-        })
+            .then((response) => {
+                return response.json();
+            })
             .then((data) => {
             
-            for (let dataItem of data.products) {
-                if (dataItem.id == id) {
-                    //Add Product
-                    if (productAdd) {
-                        if (!cartProduct) {
-                            cartList.insertAdjacentHTML('beforeend', `
+                for (let dataItem of data.products) {
+                    if (dataItem.id == id) {
+                        //Add Product
+                        if (productAdd) {
+                            if (!cartProduct) {
+                                cartList.insertAdjacentHTML('beforeend', `
                                 <li class="cart-content__item" data-cart-id="${dataItem.id}">
                                     <a href="#" class="cart-content__image">
                                         <img src="${dataItem.mainImageJpg}" alt="${dataItem.mainImageAlt}">
@@ -156,50 +156,50 @@ export function cartLogic() {
                                     <button type="button" class="cart-content__remove icon-trash-can-solid" aria-label="Удалить товар"></button>
                                 </li>
                             `);
-                        } else {
-                            //Add Product Quantity and Price
+                            } else {
+                                //Add Product Quantity and Price
+                                const cartProductQuantity = cartProduct.querySelector('.cart-content__quantity span');
+                                const cartProductPrice = cartProduct.querySelector('.cart-content__price');
+                            
+                                cartProductQuantity.textContent = ++cartProductQuantity.textContent;
+                                cartProductPrice.textContent = normalPrice(+cartProductQuantity.textContent * `${dataItem.price}`);
+                            }
+
+                            //Unhold Button
+                            currentBtn.classList.remove('hold');
+
+                        } else {    //Remove Product	
                             const cartProductQuantity = cartProduct.querySelector('.cart-content__quantity span');
                             const cartProductPrice = cartProduct.querySelector('.cart-content__price');
-                            
-                            cartProductQuantity.textContent = ++cartProductQuantity.textContent;
+                            cartProductQuantity.textContent = --cartProductQuantity.textContent;
+
+                            //Total Product Price
                             cartProductPrice.textContent = normalPrice(+cartProductQuantity.textContent * `${dataItem.price}`);
-                        }
-
-                        //Unhold Button
-                        currentBtn.classList.remove('hold');
-
-                    } else {    //Remove Product	
-                        const cartProductQuantity = cartProduct.querySelector('.cart-content__quantity span');
-                        const cartProductPrice = cartProduct.querySelector('.cart-content__price');
-                        cartProductQuantity.textContent = --cartProductQuantity.textContent;
-
-                        //Total Product Price
-                        cartProductPrice.textContent = normalPrice(+cartProductQuantity.textContent * `${dataItem.price}`);
                         
-                        //Remove Cart Product
-                        if (!parseInt(cartProductQuantity.textContent)) {
-                            cartProduct.remove();
+                            //Remove Cart Product
+                            if (!parseInt(cartProductQuantity.textContent)) {
+                                cartProduct.remove();
+                            }
+
+                            cartQuantity.textContent = --cartQuantity.textContent;
                         }
 
-                        cartQuantity.textContent = --cartQuantity.textContent;           
-                    }
-
-                    countCartTotal();
+                        countCartTotal();
         
-                    updateStorage();         
+                        updateStorage();
 
-                    showCartQuantity();
+                        showCartQuantity();
 
-                    if (cartList.children.length > 0) {
-                        cartQuantity.classList.add('active');  
-                        cartBody.classList.add('active');
-                    } else {
-                        cartQuantity.classList.remove('active');  
-                        cartBody.classList.remove('active');
+                        if (cartList.children.length > 0) {
+                            cartQuantity.classList.add('active');
+                            cartBody.classList.add('active');
+                        } else {
+                            cartQuantity.classList.remove('active');
+                            cartBody.classList.remove('active');
+                        }
                     }
                 }
-            }
-        });
+            });
     }
 
     document.addEventListener('click', (e) => {
